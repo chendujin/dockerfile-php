@@ -28,7 +28,6 @@ RUN set -eux; \
     lzf \
     memcached \
     mongodb \
-    msgpack \
     mysqli \
     opcache \
     pcntl \
