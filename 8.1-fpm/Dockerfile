@@ -5,28 +5,7 @@ ENV TZ=Asia/Shanghai
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-# # Libs
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
-#     apk update && \
-#     apk add --no-cache make \
-#                        libc-dev \
-#                        gcc \
-#                        g++ \
-#                        linux-headers \
-#                        wget \
-#                        tzdata \
-#                        libxml2-dev \
-#                        openssl-dev \
-#                        sqlite-dev \
-#                        curl-dev \
-#                        oniguruma-dev \
-#                        autoconf \
-#                        libzip-dev \
-#                        freetype-dev \
-#                        libjpeg-turbo-dev \
-#                        libpng-dev \
-#                        imagemagick \
-#                        imagemagick-dev
+
 # PHP-Extensions
 RUN set -eux; \
     chmod +x /usr/local/bin/install-php-extensions; \
