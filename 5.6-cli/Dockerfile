@@ -22,7 +22,6 @@ RUN set -eux; \
     gd \
     gettext \
     gmp \
-    igbinary \
     imagick \
     intl \
     lzf \
