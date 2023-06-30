@@ -13,7 +13,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/re
 RUN set -eux; \
     chmod +x /usr/local/bin/install-php-extensions; \
     install-php-extensions \
-    amqp \
+    amqp-1.11.0 \
     bcmath \
     bz2 \
     calendar \
