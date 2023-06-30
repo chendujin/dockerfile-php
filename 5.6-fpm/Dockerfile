@@ -11,6 +11,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/re
 
 # PHP-Extensions
 RUN set -eux; \
+    pecl config-set http_proxy 60.216.101.46:32868; \
     chmod +x /usr/local/bin/install-php-extensions; \
     install-php-extensions \
     amqp-1.10.2 \
