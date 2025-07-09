@@ -1,9 +1,10 @@
-FROM php:7.4-fpm-alpine
+FROM php:8.3-cli-alpine
 
 ENV TZ=Asia/Shanghai
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
+# Libs
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 # PHP-Extensions
@@ -21,11 +22,13 @@ RUN set -eux; \
     gd \
     gettext \
     gmp \
+    igbinary \
     imagick \
     intl \
     lzf \
     memcached \
     mongodb \
+    msgpack \
     mysqli \
     opcache \
     pcntl \
@@ -33,6 +36,7 @@ RUN set -eux; \
     pdo_pgsql \
     pgsql \
     redis \
+    rdkafka \
     sockets \
     swoole \
     tidy \
@@ -52,9 +56,3 @@ RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.ph
     composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ && \
     # Clean
     apk del && rm -rf /var/cache/apk/* && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /var/www/html
-
-EXPOSE 9000
-
-CMD ["php-fpm", "-R"]

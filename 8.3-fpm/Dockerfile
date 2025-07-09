@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:8.3-fpm-alpine
 
 ENV TZ=Asia/Shanghai
 
@@ -21,11 +21,13 @@ RUN set -eux; \
     gd \
     gettext \
     gmp \
+    igbinary \
     imagick \
     intl \
     lzf \
     memcached \
     mongodb \
+    msgpack \
     mysqli \
     opcache \
     pcntl \
@@ -33,6 +35,7 @@ RUN set -eux; \
     pdo_pgsql \
     pgsql \
     redis \
+    rdkafka \
     sockets \
     swoole \
     tidy \
